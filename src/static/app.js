@@ -79,6 +79,8 @@ document.addEventListener("DOMContentLoaded", () => {
     const activityName = deleteButton.dataset.activity;
     const email = deleteButton.dataset.email;
 
+    if (!window.confirm(`Remove ${email} from ${activityName}?`)) return;
+
     try {
       const response = await fetch(`/activities/${encodeURIComponent(activityName)}/participants/${encodeURIComponent(email)}`, {
         method: "DELETE",
