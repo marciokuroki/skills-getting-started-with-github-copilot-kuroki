@@ -66,6 +66,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   async function refreshActivities() {
+    activitySelect.innerHTML = '<option value="">-- Selecione uma atividade --</option>';
     await fetchActivities();
   }
 
